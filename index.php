@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio reticolo</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div id="documineto">
+
+        <div class="input">
+
+            <input type="button" value="Mostra reticolo" id="mostraReticolo">
+        
+        </div>
+
+        <div id="reticolo">
+
+
+
+        </div>
+
+        <div class="radiobutton">
+
+            <input type="radio" name="radioBtn" id="radioRiga" value="radioRiga">
+            <label for="radioRiga">Riga</label>
+            <input type="number" name="numero" id="textRiga" value=""><br>
+            <input type="radio" name="radioBtn" id="radioColonna" value="radioColonna">
+            <label for="radioColonna">Colonna</label>
+            <input type="number" name="numero" id="textColonna" value=""><br>
+            <input type="radio" name="radioBtn" id="radioPrimaDiagonale" value="radioPrimaDiagonale">
+            <label for="radioPrimaDiagonale">Prima diagonale</label>
+            <input type="number" id="textPrimaDiagonale" value=""><br>
+            <input type="radio" name="radioBtn" id="radioSecondaDiagonale" value="radioSecondaDiagonale">
+            <label for="radioSecondaDiagonale">Seconda diagonale</label>
+            <input type="number" id="textSecondaDiagonale" value=""><br>
+
+        </div>
+
+        <input type="text" id="areaText" value="" readonly>
+
+        <input type="checkbox" id="checkInvert">
+        <label for="checkInvert">Inverti accesso alla lettura</label>
+
+    </form>
+    
+</body>
+<script src="script.js"></script>
+</html>
