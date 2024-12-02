@@ -12,13 +12,19 @@
                 xhttp.send();
             }
             function popolaSelect(lista) {
+
                 var sel = document.getElementById('lista');
                 var rc = JSON.parse(lista);
+
+                print_r(rc);
+
                 for (i = 0; i < rc.elenco.length; i++) {
+
                     var opt = document.createElement("option");
                     opt.value= rc.elenco[i].id;
                     opt.innerHTML = rc.elenco[i].lettera;
                     sel.appendChild(opt);
+
                 }
             }
         </script>    

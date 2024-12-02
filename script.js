@@ -13,162 +13,21 @@ const alfabetoItaliano = [
 
 let reticoloLettere = [];
 
+function creaArray(){
 
-mostraReticolo.addEventListener('click', showReticolo);
+    let x=5;
 
-checkInvert.addEventListener('change', function() {
+    reticoloLettere = [];
 
-    if (this.checked) {
+    for(let i=0; i<x; i++){
 
-        alert('Selezionata');
+        reticoloLettere[i] = [];
 
-    } else {
+        for(let j=0; j<x; j++){
 
-        alert('Non selezionata');
-
-    }
-
-});
-
-inviaParola.addEventListener('click', sendParola);
-
-function showReticolo() {
-
-    let result = [];
-
-    for (let i = 0; i < reticoloLettere.length; i++) {
-
-        result[i] = '';
-
-        for (let j = 0; j < reticoloLettere[i].length; j++) {
-
-            result[i] += '<input type="button" value="'+reticoloLettere[i][j]+'" readonly>';
-            
+            reticoloLettere[i][j] = 'A';
         }
     }
 
-    
-    reticoloDiv.innerHTML = result.join('<br>');
-
-}
-
-function leggiTextArea() {
-    
-    let textArea = document.getElementById('inputText').value;
-
-    return textArea;
-}
-
-function radioBtnNumber(index) {
-    
-    return document.getElementsByName('numero')[index];
-
-}
-
-function radioBtnSelectedAndNumber() {
-    
-    let radioBtn = document.getElementsByName('radioBtn');
-    
-    let result = [];
-    for (i = 0; i < radioBtn.length; i++) {
-
-        if (radioBtn[i].checked){
-
-            if(radioBtnNumber(i).value > 0){
-
-                console.log('Radio button: ' + radioBtn[i].value + ', Numero: ' + radioBtnNumber(i).value);
-                result[0] = radioBtn[i].value;
-                result[1] = radioBtnNumber(i).value;
-                return result;
-            }
-
-            
-
-        }
-    }
-
-    return null;
-
-}
-
-function sendParola(){
-
-    let radioBtn = radioBtnSelectedAndNumber();
-    let textArea = leggiTextArea();
-    
-    if(radioBtn[0] != null && !textArea == ''){
-
-        switch (radioBtn[0]) {
-
-            
-            case 'radioRiga':
-
-                creaParolaRiga(textArea, radioBtn[1]);
-                
-                break;
-
-            case 'radioColnna':
-
-                break;
-
-
-            case 'radioPrimaDiagonale':
-
-
-                break;
-
-
-            case 'radioSecondaDiagonale':
-
-                break;
-        
-            default:
-                break;
-        }
-    }
-
-}
-
-function creaParolaRiga(parola, nRiga) {
-    
-    alert('Parola: ' + parola);
-
-    let result = [];
-
-    //i = righe j = colonne
-
-    for (let i = 0; i < 5; i++) {
-
-        result[i] = '';
-
-        for (let j = 0; j < 5; j++) {
-
-            if(i == nRiga){
-
-                reticoloLettere[i][j] = parola[j].char;
-                console.log(parola[j]);
-                result[i] += '<input type="button" value="'+parola[j].toUpperCase()+'" readonly>';
-
-            } else {
-
-                //randomico tutto
-
-                try { //nel caso in cui il reticolo sia vuoto
-                    
-                    result[i] += '<input type="button" value="'+reticoloLettere[i][j]+'" readonly>';
-                
-                    //console.log(result[i]);
-
-                } catch (error) {
-                    
-                }
-            }
-            
-            
-        }
-    }
-
-    reticoloDiv.innerHTML = result.join('<br>');
-
-
+    reticoloDiv.innerHTML = reticoloLettere.join('<br>');
 }

@@ -16,7 +16,7 @@
 		$i++;
 	}
 
-	$rand = rand(0, $i - 1);
+	$r = rand(0, $i - 1);
 
     $res = $out[$r]['lettera'];
 	echo json_encode($res);

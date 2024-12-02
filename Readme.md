@@ -1,0 +1,1 @@
+PHP serve solo ed esclusivamente per la scelta della parola dal db
